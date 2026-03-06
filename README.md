@@ -8,7 +8,7 @@
 * **Karla** - [Link para o GitHub]
 * **Natalia** - [(https://github.com/natrod141-coder)]
 * **Matheus** - [(https://github.com/MatheusEduardo10)]
-* **Isabella** - [Link para o GitHub]
+* **Isabella** - [https://github.com/Bellasguarden]
 * **Emerson** - [Link para o GitHub]
 * **Pedro** - [Link para o GitHub]
 
