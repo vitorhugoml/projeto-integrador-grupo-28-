@@ -4,7 +4,7 @@
 *ex...*
 
 ## 2. Integrantes do Grupo
-* **Vitor** - [Link para o GitHub]
+* **Vitor** - [(https://github.com/vitorhugoml)]
 * **Karla** - [Link para o GitHub]
 * **Natalia** - [(https://github.com/natrod141-coder)]
 * **Matheus** - [(https://github.com/MatheusEduardo10)]
