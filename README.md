@@ -1,19 +1,19 @@
 # Projeto Integrador gp 28: [NOME DO PROJETOgit ]
 
 ## 1. Tema do Projeto
-*ex...*
+*Análise de sobrevivência dos passageiros do RMS Titanic para identificação de padrões demográficos e socioeconômicos.*
 
 ## 2. Integrantes do Grupo
 * **Vitor** - [(https://github.com/vitorhugoml)]
-* **Karla** - [Link para o GitHub]
+* **Karla** - [(https://github.com/karlam-lgtm)]
 * **Natalia** - [(https://github.com/natrod141-coder)]
 * **Matheus** - [(https://github.com/MatheusEduardo10)]
-* **Isabella** - [Link para o GitHub]
+* **Isabella** - [https://github.com/Bellasguarden]
 * **Emerson** - [Link para o GitHub]
 * **Pedro** - [(https://github.com/pedrovilaca97)]
 
 ## 3. Objetivo da Análise. 
-*Ex...*
+*Identificar quais fatores (como classe, idade e sexo) foram determinantes para a sobrevivência no naufrágio. A base utilizada é a "Titanic - Machine Learning from Disaster" do Kaggle.*
 
 ## 4. Planejamento das Tarefas (Cronograma)
 | Integrante | Atividade | Prazo | 
@@ -25,7 +25,7 @@
 
 ## 5. Base de Dados
 * **Fonte:** https://www.kaggle.com/datasets/dimplebathija/titanic-machine-learning-from-disaster
-* **Contexto: Titanic: Machine Learning from Disaster
+* **Contexto:** Titanic: Machine Learning from Disaster
 
 O dataset Titanic – Machine Learning from Disaster, disponível na plataforma Kaggle, é um dos conjuntos de dados mais famosos utilizados para aprendizado de Ciência de Dados e Machine Learning. Ele contém informações sobre os passageiros que estavam a bordo do navio Titanic durante sua viagem inaugural em 1912, quando a embarcação colidiu com um iceberg e afundou no Oceano Atlântico. Esse desastre resultou em grande perda de vidas e se tornou um dos naufrágios mais conhecidos da história.
 
@@ -47,12 +47,5 @@ Dessa forma, o dataset Titanic é amplamente utilizado em projetos educacionais 
 * Conversão de formatos de data para análise temporal.
 
 ## 7. Ideia Inicial do Dashboard (Métricas e Visualizações)
-**Principais Métricas (KPIs):**
-1. ex Faturamento Total.
-2. ex Ticket Médio. 
-3. ex Taxa de Churn.
-
-**Visualizações Propostas:**
-* ex Gráfico de Linhas: Evolução mensal das vendas.
-* ex Gráfico de Barras: Top 10 produtos mais vendidos.
-* ex Mapa Calor: Concentração de vendas por estado.
+**Métricas:** Taxa de sobrevivência geral e média de idade dos sobreviventes.
+**Visualizações:** Gráfico de barras de sobrevivência por classe social e gráfico de pizza por gênero.
