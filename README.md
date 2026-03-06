@@ -7,7 +7,7 @@
 * **Vitor** - [Link para o GitHub]
 * **Karla** - [Link para o GitHub]
 * **Natalia** - [(https://github.com/natrod141-coder)]
-* **Matheus** - [Link para o GitHub]
+* **Matheus** - [(https://github.com/MatheusEduardo10)]
 * **Isabella** - [Link para o GitHub]
 * **Emerson** - [Link para o GitHub]
 * **Pedro** - [Link para o GitHub]
