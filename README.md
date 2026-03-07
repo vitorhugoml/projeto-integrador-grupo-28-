@@ -13,7 +13,7 @@
 * **Natalia** - [(https://github.com/natrod141-coder)]
 * **Matheus** - [(https://github.com/MatheusEduardo10)]
 * **Isabella** - [https://github.com/Bellasguarden]
-* **Emerson** - [Link para o GitHub]
+* **Emerson** - [(https://github.com/emerson-maker)]
 * **Pedro** - [(https://github.com/pedrovilaca97)]
 
 ## 3. Objetivo da Análise. 
