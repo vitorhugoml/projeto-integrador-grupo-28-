@@ -1,4 +1,4 @@
-# Projeto Integrador gp 28: [NOME DO PROJETOgit ]
+## Projeto Integrador - Grupo 28: Análise de Sobrevivência do Titanic
 
 ## 1. Tema do Projeto
 *Análise de sobrevivência dos passageiros do RMS Titanic para identificação de padrões demográficos e socioeconômicos.*
