@@ -31,11 +31,13 @@ O dataset Titanic – Machine Learning from Disaster, disponível na plataforma 
 
 O objetivo principal desse dataset é permitir que pesquisadores e estudantes desenvolvam modelos de aprendizado de máquina capazes de prever quais passageiros sobreviveram ao desastre, com base em diferentes características presentes nos dados. Entre essas características estão fatores como idade, sexo, classe do passageiro, valor da passagem, número de familiares a bordo e porto de embarque.
 
-O conjunto de dados é dividido em dois arquivos principais:
+O conjunto de dados é dividido em três arquivos principais:
 
 train.csv: contém os dados dos passageiros juntamente com a informação de sobrevivência, sendo utilizado para treinar modelos de machine learning.
 
 test.csv: possui os mesmos atributos, porém sem o resultado de sobrevivência, sendo utilizado para testar a capacidade de previsão do modelo desenvolvido.
+
+gender_submission.csv: 
 
 A análise desses dados permite identificar padrões importantes relacionados à sobrevivência no Titanic. Estudos realizados com esse dataset indicam que fatores como gênero, idade e classe social tiveram forte influência nas chances de sobrevivência. Por exemplo, mulheres, crianças e passageiros de classes mais altas tiveram maior probabilidade de sobreviver em comparação com homens adultos e passageiros de classes mais baixas.
 
