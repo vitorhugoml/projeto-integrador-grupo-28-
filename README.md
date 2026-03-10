@@ -37,7 +37,7 @@ train.csv: contém os dados dos passageiros juntamente com a informação de sob
 
 test.csv: possui os mesmos atributos, porém sem o resultado de sobrevivência, sendo utilizado para testar a capacidade de previsão do modelo desenvolvido.
 
-gender_submission.csv: 
+gender_submission.csv: funciona como um gabarito de formato, servindo exclusivamente para orientar a criação do arquivo de submissão final do projeto, e não como fonte de dados para aprendizado de máquina.
 
 A análise desses dados permite identificar padrões importantes relacionados à sobrevivência no Titanic. Estudos realizados com esse dataset indicam que fatores como gênero, idade e classe social tiveram forte influência nas chances de sobrevivência. Por exemplo, mulheres, crianças e passageiros de classes mais altas tiveram maior probabilidade de sobreviver em comparação com homens adultos e passageiros de classes mais baixas.
 
