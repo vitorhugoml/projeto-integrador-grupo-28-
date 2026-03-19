@@ -13,7 +13,7 @@
 * **Pedro** - [(https://github.com/pedrovilaca97)]
 
 ## 3. Objetivo da Análise. 
-*Identificar quais fatores (como classe, idade e sexo) foram determinantes para a sobrevivência no naufrágio. A base utilizada é a "Titanic - Machine Learning from Disaster" do Kaggle.
+Identificar quais fatores (como classe, idade e sexo) foram determinantes para a sobrevivência no naufrágio. A base utilizada é a "Titanic - Machine Learning from Disaster" do Kaggle.
 
 ## 4. Planejamento das Tarefas (Cronograma)
 | Integrante | Atividade | Prazo | 
@@ -47,25 +47,87 @@ A análise desses dados permite identificar padrões importantes relacionados à
 
 Dessa forma, o dataset Titanic é amplamente utilizado em projetos educacionais e competições de ciência de dados, pois permite aplicar diversas técnicas como análise exploratória de dados, limpeza de dados, engenharia de atributos e construção de modelos preditivos. Além de servir como introdução prática ao aprendizado de máquina, ele também ajuda a compreender como os dados podem revelar padrões e apoiar a tomada de decisões baseada em evidências.
 
-## 6. Transformações Planejadas (processamente com Pandas)
-6.1. Padronização e Limpeza de Dados
- * Renomeação de Colunas: Tradução e padronização para o formato snake_case (ex: de PassengerId para id_passageiro, Pclass para classe_pax) para facilitar a codificação.
- * Ajuste de Tipagem: Conversão de variáveis categóricas (como porto de embarque) para o tipo category, reduzindo o uso de memória.
-6.2. Tratamento de Dados Ausentes (Data Imputation)
- * Coluna Age (Idade): Preenchimento de valores nulos utilizando a mediana agrupada por Classe e Sexo. Isso evita que a média geral ignore as diferenças de perfil entre as cabines.
- * Coluna Embarked: Preenchimento dos valores faltantes com a moda (Porto "S" - Southampton), por ser o ponto de partida da maioria dos passageiros.
- * Coluna Cabin: Criação de uma categoria sinalizadora "Nao_Informado", transformando a ausência de dado em uma variável de análise (pode indicar passageiros sem cabine fixa).
-6.3. Engenharia de Variáveis (Feature Engineering)
-Criaremos novas métricas que não existem no dado original, mas que são cruciais para o Dashboard:
- * Tamanho_Familia: Junção das colunas SibSp (irmãos/cônjuge) e Parch (pais/filhos) + 1.
- * Viajava_Sozinho: Variável binária (Sim/Não) derivada do tamanho da família.
- * Titulo_Social: Extração de prefixos dos nomes (Ex: Mr, Miss, Master, Dr) para analisar se o status social influenciou na prioridade de salvamento.
-6.4. Normalização e Agregações
- * Faixas Etárias: Criação de colunas de agrupamento: Criança (0-12), Adolescente (13-17), Adulto (18-59) e Idoso (60+).
- * Métricas de Sobrevivência: Geração de tabelas agregadas com a Taxa de Sobrevivência (%) segmentada por classe, gênero e faixa etária para alimentação direta dos gráficos.
-6.5. Geração da Base Final
- * Exportação: O resultado final será salvo na pasta /data/processed/titanic_cleaned.csv, servindo como fonte de dados única e otimizada.
+## 6. Transformações Planejadas (Processamento com Pandas)
+
+### 6.1 Padronização e Limpeza de Dados
+
+| Ação | Descrição |
+| :--- | :--- |
+| **Renomeação de Colunas** | Tradução e padronização para `snake_case` (ex: `PassengerId` → `id_passageiro`, `Pclass` → `classe_pax`) |
+| **Ajuste de Tipagem** | Conversão de variáveis categóricas (como porto de embarque) para o tipo `category`, reduzindo uso de memória |
+
+---
+
+### 6.2 Tratamento de Dados Ausentes (Data Imputation)
+
+| Coluna | Estratégia | Justificativa |
+| :--- | :--- | :--- |
+| **Age** (Idade) | Preenchimento com a mediana agrupada por Classe e Sexo | Evita que a média geral ignore diferenças de perfil entre as cabines |
+| **Embarked** (Porto) | Preenchimento com a moda — Porto `"S"` (Southampton) | É o ponto de partida da maioria dos passageiros |
+| **Cabin** (Cabine) | Criação da categoria sinalizadora `"Nao_Informado"` | Transforma a ausência do dado em variável de análise |
+
+---
+
+### 6.3 Engenharia de Variáveis (Feature Engineering)
+
+> Novas métricas que não existem no dataset original, mas que são cruciais para o Dashboard.
+
+| Nova Variável | Origem | Descrição |
+| :--- | :--- | :--- |
+| `tamanho_familia` | `SibSp` + `Parch` + 1 | Representa o total de familiares a bordo incluindo o próprio passageiro |
+| `viajava_sozinho` | Derivada de `tamanho_familia` | Variável binária (`Sim` / `Não`) |
+| `titulo_social` | Extraída da coluna `Name` | Captura prefixos como `Mr.`, `Miss.`, `Master.`, `Dr.` para análise de status social |
+
+---
+
+### 6.4 Normalização e Agregações
+
+| Transformação | Detalhamento |
+| :--- | :--- |
+| **Faixas Etárias** | `Criança` (0–12) · `Adolescente` (13–17) · `Adulto` (18–59) · `Idoso` (60+) |
+| **Métricas de Sobrevivência** | Tabelas agregadas com Taxa de Sobrevivência (%) segmentada por classe, gênero e faixa etária para alimentação direta dos gráficos |
+
+---
+
+### 6.5 Geração da Base Final
+```
+/data/processed/titanic_cleaned.csv
+```
+
+> O arquivo final será a fonte de dados única e otimizada utilizada pelo Dashboard, consolidando todas as transformações acima.
 
 ## 7. Ideia Inicial do Dashboard (Métricas e Visualizações)
-**Métricas:** Taxa de sobrevivência geral e média de idade dos sobreviventes.
-**Visualizações:** Gráfico de barras de sobrevivência por classe social e gráfico de pizza por gênero.
+
+### 7.1 Métricas Gerais (KPIs)
+
+| Métrica | Descrição |
+| :--- | :--- |
+| **Taxa de Sobrevivência Geral (%)** | Percentual total de sobreviventes em relação ao total de passageiros |
+| **Total de Passageiros** | Contagem geral separada entre sobreviventes e não sobreviventes |
+| **Média de Idade** | Comparativo de média de idade entre sobreviventes e não sobreviventes |
+| **Taxa de Sobrevivência por Gênero (%)** | Percentual de sobrevivência separado entre homens e mulheres |
+
+---
+
+### 7.2 Visualizações Planejadas
+
+| # | Visualização | Tipo | Variável Utilizada | Objetivo |
+| :---: | :--- | :---: | :--- | :--- |
+| 1 | Sobrevivência por Classe Social | Barras Agrupadas | `classe_pax` | Evidenciar o impacto do status socioeconômico |
+| 2 | Sobrevivência por Gênero | Pizza / Donut | `sexo` | Reforçar o padrão "mulheres e crianças primeiro" |
+| 3 | Sobrevivência por Faixa Etária | Barras | `faixa_etaria` | Verificar a influência da idade nas chances de sobrevivência |
+| 4 | Sobrevivência por Título Social | Barras Horizontais | `titulo_social` | Analisar se o título influenciou na prioridade de salvamento |
+| 5 | Sobrevivência por Tamanho de Família | Linha / Barras | `tamanho_familia` | Verificar se viajar acompanhado impactou a sobrevivência |
+| 6 | Passageiros que Viajavam Sozinhos | Pizza | `viajava_sozinho` | Comparar taxa de sobrevivência entre passageiros sozinhos e acompanhados |
+| 7 | Sobrevivência por Porto de Embarque | Barras | `porto_embarque` | Analisar correlação entre porto de embarque e sobrevivência |
+
+---
+
+### 7.3 Filtros Interativos Previstos
+
+| Filtro | Opções |
+| :--- | :--- |
+| **Classe** | 1ª, 2ª, 3ª |
+| **Gênero** | Masculino, Feminino |
+| **Faixa Etária** | Criança, Adolescente, Adulto, Idoso |
+| **Viajava Sozinho** | Sim, Não |
