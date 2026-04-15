@@ -18,14 +18,11 @@ Identificar quais fatores (como classe, idade e sexo) foram determinantes para a
 ## 4. Planejamento das Tarefas (Cronograma)
 | Integrante | Atividade | Prazo | 
 | :--- | :--- | :--- |
-| **Karla e Vitor** | Criação e estruturação do repositório no GitHub | 01-03/03/2026 |
-| **Natália e Vitor** | Escolha do dataset no Kaggle | 05-08/03/2026 |
-| **Vitor, Pedro e Isabella** | Redação da seção 'Tema, contexto e objetivo' no README | 10-13/03/2026 |
-| **Matheus e Natália** | Planejamento das transformações de ETL | 13-16/03/2026 |
-| **isabella e Pedro** | Definição das métricas, KPIs e visualisações do dashboard | 13-16/03/2026 |
-| **Pedro, Karla e Emerson** | Revisão cruzada do conteúdo técnico e textual | 17-18/03/2026 |
-| **Matheus, Emerson e Natália** | Ajustes finais, conferência de links, padronização do README | 18-20/03/2026 |
-| **Vitor** | Entrega Oficial: envio do link do repositório | 20-23/03/2026 |
+| **Matheus, Natália e Emerson** | ETL e processamento de dados | 24-04-2026 |
+| **Vitor + Isabella/Pedro + Karla/Matheus + Natália** | Dashboard Streamlit  | 05-05-2026 |
+| **Vitor** | Publicação no Streamlit Cloud  | 06/10-05-2026 |
+| **Todos os integrantes** | Testes do streamlit | 06/10-05-2026 |
+| **Karla, Emerson, Pedro e Natália** | Revisão final e atualização do README | -16/03/2026 |
 
 ## 5. Base de Dados
 * **Fonte:** https://www.kaggle.com/datasets/dimplebathija/titanic-machine-learning-from-disaster
