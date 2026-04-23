@@ -44,6 +44,29 @@ df['idade'] = df['idade'].fillna(
 print("\n--- Contagem de valores nulos após o tratamento ---")
 print(df.isnull().sum())
 
+# passo 6.3 Engenharia de Variáveis 
+1. Variável: tamanho_familia
+# SibSp = irmãos/cônjuges
+# Parch = pais/filhos
+# +1 = o próprio passageiro
+
+df['tamanho_familia'] = df['SibSp'] + df['Parch'] + 1
+
+# 2. Variável: viajava_sozinho
+# Se tamanho_familia == 1 → viajava sozinho
+
+df['viajava_sozinho'] = df['tamanho_familia'].apply(lambda x: 1 if x == 1 else 0)
+
+# 3. Variável: titulo_social
+# Extraindo o título do nome (Mr, Miss, Mrs, Dr, etc.)
+
+df['titulo_social'] = df['Name'].apply(
+    lambda x: x.split(',')[1].split('.')[0].strip()
+)
+
+# Visualizar resultado
+print(df[['Name', 'SibSp', 'Parch', 'tamanho_familia', 'viajava_sozinho', 'titulo_social']].head())
+
 # passo 6.4 normalização e agregações
 
 # faixas etárias
