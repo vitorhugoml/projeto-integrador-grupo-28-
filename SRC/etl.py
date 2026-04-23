@@ -43,3 +43,53 @@ df['idade'] = df['idade'].fillna(
 
 print("\n--- Contagem de valores nulos após o tratamento ---")
 print(df.isnull().sum())
+
+# passo 6.4 normalização e agregações
+
+# faixas etárias
+def classificar_faixa_etaria(idade):
+    if idade <= 12:
+        return 'Criança'
+    elif idade <= 17:
+        return 'Adolescente'
+    elif idade <= 59:
+        return 'Adulto'
+    else:
+        return 'Idoso'
+
+df['faixa_etaria'] = df['idade'].apply(classificar_faixa_etaria)
+df['faixa_etaria'] = df['faixa_etaria'].astype('category')
+
+# taxas de sobrevivência agregadas por segmento
+sobrevivencia_classe = df.groupby('classe_pax', observed=True)['sobreviveu'].apply(
+    lambda x: (x.astype(int).sum() / len(x) * 100).round(1)
+).reset_index()
+sobrevivencia_classe.columns = ['classe_pax', 'taxa_sobrevivencia']
+
+sobrevivencia_sexo = df.groupby('sexo', observed=True)['sobreviveu'].apply(
+    lambda x: (x.astype(int).sum() / len(x) * 100).round(1)
+).reset_index()
+sobrevivencia_sexo.columns = ['sexo', 'taxa_sobrevivencia']
+
+sobrevivencia_faixa = df.groupby('faixa_etaria', observed=True)['sobreviveu'].apply(
+    lambda x: (x.astype(int).sum() / len(x) * 100).round(1)
+).reset_index()
+sobrevivencia_faixa.columns = ['faixa_etaria', 'taxa_sobrevivencia']
+
+print("\n--- Taxa de sobrevivência por classe ---")
+print(sobrevivencia_classe)
+print("\n--- Taxa de sobrevivência por sexo ---")
+print(sobrevivencia_sexo)
+print("\n--- Taxa de sobrevivência por faixa etária ---")
+print(sobrevivencia_faixa)
+
+# passo 6.5 geração da base final
+import os
+
+os.makedirs('data/processed', exist_ok=True)
+df.to_csv('data/processed/titanic_cleaned.csv', index=False)
+
+print("\n--- Base final gerada com sucesso ---")
+print(f"Arquivo salvo em: data/processed/titanic_cleaned.csv")
+print(f"Shape final do dataframe: {df.shape}")
+print(f"\nColunas disponíveis:\n{list(df.columns)}")
