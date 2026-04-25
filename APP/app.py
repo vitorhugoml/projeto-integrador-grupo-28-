@@ -18,3 +18,20 @@ def load_data():
     return pd.read_csv(caminho)
 
 df = load_data()
+
+# Criar a sidebar (estrutura)
+st.sidebar.title("Filtros")
+
+# ---------- BLOCO ISABELLA ---------
+# Aqui entram os filtros da sidebar
+
+# --------------------------------------
+
+# PASSO 6 — Criar área de KPIs
+st.markdown("## KPIs Gerais")
+col1, col2, col3, col4 = st.columns(4)
+
+# ---------- BLOCO DA ISABELLA ---------
+# Aqui entram os KPIs
+
+# --------------------------------------
