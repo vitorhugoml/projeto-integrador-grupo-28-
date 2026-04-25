@@ -8,3 +8,13 @@ st.set_page_config(
     page_icon="🚀",  # O emoji pode ser alterado caso o grupo queira
     layout="wide"
 )
+
+# Carregar o CSV tratado
+BASE_DIR = Path(__file__).resolve().parent
+
+@st.cache_data
+def load_data():
+    caminho = BASE_DIR / "Data/processed/titanic_cleaned.csv"
+    return pd.read_csv(caminho)
+
+df = load_data()
